@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tahir Cloth | Premium Pakistani Clothing</title>
+<meta name="description" content="Discover Tahir Cloth — premium Pakistani clothing featuring elegant men's, women's and kids' fashion, traditional designs and quality fabrics.">
+<meta name="keywords" content="Tahir Cloth, Pakistani clothing, kurta, embroidered suit, premium fashion, Lahore">
+<meta property="og:title" content="Tahir Cloth | Premium Pakistani Clothing">
+<meta property="og:description" content="Premium fabrics. Timeless designs. Made for comfort. Styled for you.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#111111;
+    --white:#FFFFFF;
+    --beige:#F3EBDD;
+    --light-beige:#FAF8F3;
+    --gold:#A67C42;
+    --gold-soft:#C9A876;
+    --line:rgba(17,17,17,0.1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--black);
+    background:var(--light-beige);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Playfair Display', serif;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ul{list-style:none;}
+  .container{max-width:1180px; margin:0 auto; padding:0 24px;}
+  .eyebrow{font-size:0.78rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:14px;}
+  section{padding:90px 0;}
+
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(250,248,243,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between; padding:20px 24px; max-width:1180px; margin:0 auto;}
+  .logo{font-family:'Playfair Display', serif; font-weight:700; font-size:1.5rem; letter-spacing:0.5px;}
+  .logo span{color:var(--gold);}
+  .nav-links{display:flex; align-items:center; gap:36px;}
+  .nav-links a{font-size:0.92rem; letter-spacing:0.5px; position:relative; padding:4px 0;}
+  .nav-links a.active, .nav-links a:hover{color:var(--gold);}
+  .nav-links a.active::after{content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:var(--gold);}
+  .nav-cta{background:var(--black); color:var(--white); padding:11px 24px; font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; transition:background .2s;}
+  .nav-cta:hover{background:var(--gold);}
+  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; z-index:110;}
+  .hamburger span{width:26px; height:1.5px; background:var(--black); transition:.3s;}
+  .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  .hero{padding-top:170px; padding-bottom:90px;}
+  .hero-inner{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  .hero h1{font-size:clamp(2.5rem,5vw,3.8rem); font-weight:600; line-height:1.15; margin-bottom:24px;}
+  .hero h1 em{font-style:italic; color:var(--gold);}
+  .hero p{font-size:1.05rem; opacity:0.72; max-width:440px; margin-bottom:34px;}
+  .btn{display:inline-block; padding:15px 34px; font-size:0.85rem; letter-spacing:1.5px; text-transform:uppercase; transition:all .25s; border:1px solid var(--black);}
+  .btn-dark{background:var(--black); color:var(--white);}
+  .btn-dark:hover{background:var(--gold); border-color:var(--gold);}
+  .btn-outline{background:transparent; color:var(--black);}
+  .btn-outline:hover{background:var(--black); color:var(--white);}
+  .hero-visual{position:relative; height:460px;}
+  .hero-panel{position:absolute; border-radius:2px; overflow:hidden; box-shadow:0 30px 60px rgba(17,17,17,0.18);}
+  .hero-panel.p1{width:72%; height:88%; top:0; left:0; background:linear-gradient(160deg,#2b2b2b,#111111);}
+  .hero-panel.p2{width:52%; height:52%; bottom:0; right:0; background:linear-gradient(160deg,var(--gold-soft),var(--gold));}
+  .hero-tag{position:absolute; bottom:24px; left:24px; color:var(--white); font-family:'Playfair Display',serif; font-style:italic; font-size:1.1rem; z-index:2;}
+
+  .section-head{text-align:center; max-width:600px; margin:0 auto 56px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.5rem); font-weight:600;}
+
+  .filter-bar{display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:46px;}
+  .filter-btn{padding:9px 22px; font-size:0.82rem; letter-spacing:1px; text-transform:uppercase; border:1px solid var(--line); background:transparent; cursor:pointer; transition:.2s;}
+  .filter-btn.active, .filter-btn:hover{background:var(--black); color:var(--white); border-color:var(--black);}
+  .products-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:26px;}
+  .product-card{background:var(--white); overflow:hidden; opacity:0; transform:translateY(24px); transition:opacity .6s, transform .6s, box-shadow .3s; cursor:pointer;}
+  .product-card.reveal{opacity:1; transform:translateY(0);}
+  .product-card:hover{box-shadow:0 20px 40px rgba(17,17,17,0.1);}
+  .product-media{height:230px; position:relative; overflow:hidden;}
+  .product-media .swatch{width:100%; height:100%; transition:transform .5s;}
+  .product-card:hover .swatch{transform:scale(1.06);}
+  .view-details{position:absolute; inset:0; background:rgba(17,17,17,0.45); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .3s;}
+  .product-card:hover .view-details{opacity:1;}
+  .view-details span{color:var(--white); font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; border-bottom:1px solid var(--white); padding-bottom:3px;}
+  .product-info{padding:20px;}
+  .product-info .cat{font-size:0.72rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:6px; display:block;}
+  .product-info h3{font-size:1.05rem; font-weight:600; margin-bottom:6px;}
+  .product-info .price{font-size:0.95rem; opacity:0.75;}
+
+  .cat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .cat-card{position:relative; height:340px; overflow:hidden; border-radius:2px; opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s;}
+  .cat-card.reveal{opacity:1; transform:translateY(0);}
+  .cat-card .swatch{width:100%; height:100%; transition:transform .5s;}
+  .cat-card:hover .swatch{transform:scale(1.08);}
+  .cat-card .label{position:absolute; bottom:22px; left:22px; color:var(--white); font-family:'Playfair Display', serif; font-size:1.3rem; z-index:2;}
+  .cat-card::after{content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(17,17,17,0.55), transparent 55%);}
+
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:30px;}
+  .why-card{text-align:center; padding:20px; opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s;}
+  .why-card.reveal{opacity:1; transform:translateY(0);}
+  .why-icon{width:56px; height:56px; border:1px solid var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; font-family:'Playfair Display', serif; font-style:italic; color:var(--gold); font-size:1.3rem;}
+  .why-card h3{font-size:1.05rem; margin-bottom:10px; font-weight:600;}
+  .why-card p{font-size:0.9rem; opacity:0.7;}
+
+  .testimonial-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .testimonial-card{background:var(--white); padding:34px; border-left:2px solid var(--gold); opacity:0; transform:translateY(20px); transition:opacity .6s, transform .6s;}
+  .testimonial-card.reveal{opacity:1; transform:translateY(0);}
+  .testimonial-card p{font-style:italic; opacity:0.78; margin-bottom:18px; font-size:0.98rem;}
+  .testimonial-card .author{font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; font-weight:600;}
+
+  .newsletter{background:var(--black); color:var(--white); text-align:center;}
+  .newsletter h2{font-size:clamp(1.7rem,3vw,2.2rem); margin-bottom:14px;}
+  .newsletter p{opacity:0.65; margin-bottom:34px;}
+  .newsletter-form{display:flex; max-width:440px; margin:0 auto; gap:10px; flex-wrap:wrap; justify-content:center;}
+  .newsletter-form input{flex:1; min-width:220px; padding:14px 18px; border:1px solid rgba(255,255,255,0.25); background:transparent; color:var(--white); font-size:0.9rem;}
+  .newsletter-form input::placeholder{color:rgba(255,255,255,0.5);}
+  .newsletter-form button{padding:14px 28px; background:var(--gold); color:var(--black); border:none; font-size:0.82rem; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; transition:.2s;}
+  .newsletter-form button:hover{background:var(--gold-soft);}
+  .form-msg{margin-top:14px; font-size:0.85rem; min-height:20px;}
+
+  .contact-wrap{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+  .contact-info .item{margin-bottom:26px;}
+  .contact-info .label{font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:6px;}
+  .contact-info .value{font-size:1.05rem;}
+  .contact-buttons{display:flex; gap:14px; margin-top:26px; flex-wrap:wrap;}
+  .social-row{display:flex; gap:16px; margin-top:30px;}
+  .social-row a{width:38px; height:38px; border:1px solid var(--line); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.85rem; transition:.2s;}
+  .social-row a:hover{background:var(--black); color:var(--white); border-color:var(--black);}
+  .contact-form input, .contact-form textarea{width:100%; padding:14px 16px; margin-bottom:16px; border:1px solid var(--line); background:var(--white); font-family:'Inter',sans-serif; font-size:0.92rem;}
+  .contact-form textarea{min-height:120px; resize:vertical;}
+  .contact-form button{width:100%; padding:15px; background:var(--black); color:var(--white); border:none; font-size:0.85rem; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; transition:.2s;}
+  .contact-form button:hover{background:var(--gold);}
+  .field-error{color:#a13d2b; font-size:0.78rem; margin-top:-12px; margin-bottom:14px; display:none;}
+
+  footer{background:var(--black); color:rgba(255,255,255,0.7); padding:60px 0 26px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:40px;}
+  .footer-brand h3{color:var(--white); font-size:1.3rem; margin-bottom:14px;}
+  .footer-brand p{font-size:0.88rem; opacity:0.7; max-width:280px;}
+  .footer-col h4{color:var(--white); font-size:0.85rem; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:18px;}
+  .footer-col a, .footer-col span{display:block; font-size:0.88rem; margin-bottom:10px; opacity:0.75;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1); padding-top:22px; text-align:center; font-size:0.8rem; opacity:0.55;}
+
+  .modal-overlay{position:fixed; inset:0; background:rgba(17,17,17,0.7); z-index:200; display:none; align-items:center; justify-content:center; padding:20px;}
+  .modal-overlay.open{display:flex;}
+  .modal-box{background:var(--white); max-width:640px; width:100%; max-height:85vh; overflow-y:auto; position:relative;}
+  .modal-close{position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.4rem; cursor:pointer;}
+  .modal-media{height:280px;}
+  .modal-content{padding:30px;}
+  .modal-content h3{font-size:1.5rem; margin-bottom:8px;}
+  .modal-content .price{color:var(--gold); font-size:1.1rem; margin-bottom:16px;}
+  .modal-content .desc{opacity:0.75; font-size:0.92rem; margin-bottom:20px;}
+  .modal-meta{display:flex; gap:30px; margin-bottom:24px; flex-wrap:wrap;}
+  .modal-meta div span{display:block; font-size:0.75rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:6px;}
+  .modal-buttons{display:flex; gap:12px; flex-wrap:wrap;}
+
+  @media (max-width:960px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero{padding-top:130px;}
+    .hero-visual{height:320px; order:-1;}
+    .products-grid{grid-template-columns:repeat(2,1fr);}
+    .cat-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .testimonial-grid{grid-template-columns:1fr;}
+    .contact-wrap{grid-template-columns:1fr; gap:40px;}
+    .footer-grid{grid-template-columns:1fr; gap:30px;}
+  }
+  @media (max-width:640px){
+    .nav-links{position:fixed; top:0; right:-100%; height:100vh; width:78%; background:var(--light-beige); flex-direction:column; justify-content:center; gap:30px; transition:right .35s; box-shadow:-10px 0 30px rgba(0,0,0,0.1);}
+    .nav-links.open{right:0;}
+    .hamburger{display:flex;}
+    .products-grid{grid-template-columns:1fr 1fr;}
+    .cat-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+  }
+
+  :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#home" class="logo">Tahir <span>Cloth</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#collection" class="nav-link">Collection</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="#collection" class="nav-cta">View Collection</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div>
+      <span class="eyebrow">Premium Pakistani Clothing</span>
+      <h1>Tahir Cloth — <em>Wear Your Style</em></h1>
+      <p>Premium fabrics. Timeless designs. Made for comfort. Styled for you.</p>
+      <a href="#collection" class="btn btn-dark">View Collection</a>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-panel p1"></div>
+      <div class="hero-panel p2"></div>
+      <span class="hero-tag">Autumn Edit 2026</span>
+    </div>
+  </div>
+</section>
+
+<section id="collection">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Handpicked For You</span>
+      <h2>Featured Collection</h2>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="men">Men</button>
+      <button class="filter-btn" data-filter="women">Women</button>
+      <button class="filter-btn" data-filter="kids">Kids</button>
+      <button class="filter-btn" data-filter="accessories">Accessories</button>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<section style="background:var(--beige);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Explore</span>
+      <h2>Shop by Categories</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card"><div class="swatch" style="background:linear-gradient(160deg,#2b2b2b,#111);"></div><span class="label">Men</span></div>
+      <div class="cat-card"><div class="swatch" style="background:linear-gradient(160deg,var(--gold-soft),var(--gold));"></div><span class="label">Women</span></div>
+      <div class="cat-card"><div class="swatch" style="background:linear-gradient(160deg,#8a7d68,#5b5142);"></div><span class="label">Kids</span></div>
+      <div class="cat-card"><div class="swatch" style="background:linear-gradient(160deg,#4a4238,#1e1a15);"></div><span class="label">Accessories</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Promise</span>
+      <h2>Why Choose Tahir Cloth?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">Q</div><h3>Premium Quality</h3><p>Finest fabrics with attention to detail.</p></div>
+      <div class="why-card"><div class="why-icon">S</div><h3>Stylish Designs</h3><p>Trendy and timeless collections for you.</p></div>
+      <div class="why-card"><div class="why-icon">C</div><h3>Ultimate Comfort</h3><p>Designed for all-day comfort and confidence.</p></div>
+      <div class="why-card"><div class="why-icon">T</div><h3>Trusted Brand</h3><p>Quality and customer satisfaction you can trust.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--beige);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Testimonials</span>
+      <h2>Customer Reviews</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card"><p>"Excellent quality and perfect stitching. Highly recommended!"</p><div class="author">Ayesha Khan</div></div>
+      <div class="testimonial-card"><p>"The fabric is so comfortable and the designs are beautiful."</p><div class="author">Muhammad Ali</div></div>
+      <div class="testimonial-card"><p>"Best clothing brand I have shopped from. Love it!"</p><div class="author">Sana Malik</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <h2>Join Our Newsletter</h2>
+    <p>Get the latest updates on new collections, fashion and offers.</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="form-msg" id="newsletterMsg"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Our Story</span>
+      <h2>About Tahir Cloth</h2>
+    </div>
+    <p style="max-width:720px; margin:0 auto 40px; text-align:center; opacity:0.78;">
+      Tahir Cloth was founded with a passion for quality fabrics, timeless style and comfortable fashion.
+      Our goal is to provide beautifully designed clothing that combines traditional Pakistani fashion with modern style.
+    </p>
+    <div class="why-grid" style="grid-template-columns:repeat(3,1fr); max-width:820px; margin:0 auto;">
+      <div class="why-card"><h3>Our Mission</h3><p>To deliver premium quality clothing with exceptional customer service.</p></div>
+      <div class="why-card"><h3>Our Vision</h3><p>To become a leading fashion brand known for trust, quality and style.</p></div>
+      <div class="why-card"><h3>Our Values</h3><p>Quality &middot; Integrity &middot; Innovation &middot; Customer Satisfaction</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--beige);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Contact Tahir Cloth</h2>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <div class="item"><span class="label">Phone / WhatsApp</span><span class="value">0342 9786719</span></div>
+        <div class="item"><span class="label">Email</span><span class="value">info@tahircloth.com</span></div>
+        <div class="item"><span class="label">Address</span><span class="value">123 Fashion Street, Lahore, Pakistan</span></div>
+        <div class="contact-buttons">
+          <a href="https://wa.me/923429786719" target="_blank" class="btn btn-dark">WhatsApp to Order</a>
+          <a href="tel:03429786719" class="btn btn-outline">Call Us</a>
+        </div>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href="#" aria-label="YouTube">yt</a>
+          <a href="https://wa.me/923429786719" target="_blank" aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" novalidate>
+        <input type="text" id="cName" placeholder="Your Name">
+        <div class="field-error" id="errName">Please enter your name.</div>
+        <input type="email" id="cEmail" placeholder="Your Email">
+        <div class="field-error" id="errEmail">Please enter a valid email.</div>
+        <textarea id="cMessage" placeholder="Your Message"></textarea>
+        <div class="field-error" id="errMessage">Please enter a message.</div>
+        <button type="submit">Send Message</button>
+        <div class="form-msg" id="contactMsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-media" id="modalMedia"></div>
+    <div class="modal-content">
+      <h3 id="modalName"></h3>
+      <div class="price" id="modalPrice"></div>
+      <p class="desc" id="modalDesc"></p>
+      <div class="modal-meta">
+        <div><span>Sizes</span>S &middot; M &middot; L &middot; XL &middot; XXL</div>
+        <div><span>Colors</span>Black &middot; Navy &middot; White &middot; Beige</div>
+      </div>
+      <div class="modal-buttons">
+        <a href="https://wa.me/923429786719" target="_blank" class="btn btn-dark">WhatsApp to Order</a>
+        <a href="tel:03429786719" class="btn btn-outline">Call Us — 0342 9786719</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Tahir Cloth</h3>
+        <p>Premium fabrics, timeless designs, made for comfort — styled for you.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#collection">Collection</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <span>Phone / WhatsApp: 0342 9786719</span>
+        <span>info@tahircloth.com</span>
+        <span>123 Fashion Street, Lahore</span>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Tahir Cloth. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const products = [
+  {name:"Premium Kurta", price:"Rs. 3,450", cat:"men", color:"linear-gradient(160deg,#2b2b2b,#111)", desc:"Premium quality fabric with a comfortable fit and timeless Pakistani design. Perfect for casual and semi-formal occasions."},
+  {name:"Embroidered Suit", price:"Rs. 4,950", cat:"women", color:"linear-gradient(160deg,#C9A876,#A67C42)", desc:"Luxurious embroidered three-piece suit crafted from premium fabric with sophisticated traditional detailing."},
+  {name:"Kids Kurta Set", price:"Rs. 2,150", cat:"kids", color:"linear-gradient(160deg,#8a7d68,#5b5142)", desc:"Soft, comfortable kurta shalwar set for kids — made for all-day wear and easy movement."},
+  {name:"Men's Shawl", price:"Rs. 1,950", cat:"accessories", color:"linear-gradient(160deg,#4a4238,#1e1a15)", desc:"Elegant patterned shawl woven from premium textile fibers, perfect for cooler days."},
+  {name:"Printed Shawl", price:"Rs. 2,050", cat:"accessories", color:"linear-gradient(160deg,#6b5a44,#332a1f)", desc:"Intricate traditional print on a soft, breathable fabric base."},
+  {name:"Casual Shirt", price:"Rs. 2,750", cat:"men", color:"linear-gradient(160deg,#3a3a3a,#151515)", desc:"Everyday comfort meets clean tailoring in this versatile casual shirt."},
+  {name:"Party Wear Dress", price:"Rs. 5,450", cat:"women", color:"linear-gradient(160deg,#d4b483,#a67c42)", desc:"Statement party wear with premium fabric and elegant silhouette."},
+  {name:"Kids Hoodie", price:"Rs. 1,850", cat:"kids", color:"linear-gradient(160deg,#9c8f7a,#6b5f4d)", desc:"Warm, cozy hoodie built for everyday play and comfort."},
+  {name:"Leather Belt", price:"Rs. 1,250", cat:"accessories", color:"linear-gradient(160deg,#3d3226,#1a1510)", desc:"Genuine leather belt with a refined buckle finish."},
+  {name:"Waistcoat", price:"Rs. 3,150", cat:"men", color:"linear-gradient(160deg,#242424,#0d0d0d)", desc:"Sharp, tailored waistcoat for a polished semi-formal look."},
+  {name:"Lawn Suit", price:"Rs. 3,850", cat:"women", color:"linear-gradient(160deg,#e3cfa8,#b8935b)", desc:"Breathable lawn fabric with delicate print work, ideal for warm days."},
+  {name:"Kids T-Shirt", price:"Rs. 1,150", cat:"kids", color:"linear-gradient(160deg,#a89a82,#786a52)", desc:"Soft cotton t-shirt built for comfort and durability."},
+];
+
+const grid = document.getElementById('productsGrid');
+
+function renderProducts(filter){
+  grid.innerHTML = '';
+  const list = filter === 'all' ? products : products.filter(p => p.cat === filter);
+  list.forEach((p, i) => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+      <div class="product-media">
+        <div class="swatch" style="background:${p.color}"></div>
+        <div class="view-details"><span>View Details</span></div>
+      </div>
+      <div class="product-info">
+        <span class="cat">${p.cat}</span>
+        <h3>${p.name}</h3>
+        <div class="price">${p.price}</div>
+      </div>`;
+    card.addEventListener('click', () => openModal(p));
+    grid.appendChild(card);
+    setTimeout(() => card.classList.add('reveal'), 60 * i);
+  });
+}
+renderProducts('all');
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProducts(btn.dataset.filter);
+  });
+});
+
+const modalOverlay = document.getElementById('modalOverlay');
+function openModal(p){
+  document.getElementById('modalMedia').style.background = p.color;
+  document.getElementById('modalName').textContent = p.name;
+  document.getElementById('modalPrice').textContent = p.price;
+  document.getElementById('modalDesc').textContent = p.desc;
+  modalOverlay.classList.add('open');
+}
+document.getElementById('modalClose').addEventListener('click', () => modalOverlay.classList.remove('open'));
+modalOverlay.addEventListener('click', e => { if(e.target === modalOverlay) modalOverlay.classList.remove('open'); });
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
+
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+  });
+  navAnchors.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+document.querySelectorAll('.cat-card, .why-card, .testimonial-card').forEach(el => {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('reveal'); } });
+  }, {threshold:0.15});
+  obs.observe(el);
+});
+
+document.getElementById('newsletterForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const email = document.getElementById('newsletterEmail').value.trim();
+  const msg = document.getElementById('newsletterMsg');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    msg.style.color = '#e07a5f';
+    msg.textContent = 'Please enter a valid email address.';
+    return;
+  }
+  msg.style.color = '#C9A876';
+  msg.textContent = 'Thank you for subscribing to Tahir Cloth!';
+  this.reset();
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  let valid = true;
+  const name = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  const message = document.getElementById('cMessage').value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  document.getElementById('errName').style.display = name ? 'none' : 'block';
+  document.getElementById('errEmail').style.display = emailRegex.test(email) ? 'none' : 'block';
+  document.getElementById('errMessage').style.display = message ? 'none' : 'block';
+
+  if (!name || !emailRegex.test(email) || !message) valid = false;
+
+  const msg = document.getElementById('contactMsg');
+  if (!valid) { msg.style.color = '#e07a5f'; msg.textContent = ''; return; }
+
+  msg.style.color = '#A67C42';
+  msg.textContent = 'Thank you! Your message has been sent — we will contact you soon.';
+  this.reset();
+});
+</script>
+
+</body>
+</html>
